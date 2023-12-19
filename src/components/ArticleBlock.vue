@@ -31,7 +31,7 @@ export default {
 <style scoped>
 @font-face {
   font-family: 'STZHONGS';
-  src: url('assets/fonts/STZHONGS.ttf') format('truetype');
+  src: url('assets/fonts/STZHONGS.TTF') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
