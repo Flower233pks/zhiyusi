@@ -64,7 +64,7 @@ export default {
         this.$nextTick(() => {
           this.addRandomMarginToArticleBlocks();
         })
-      }, 1000); // 假设1秒后获取到数据
+      }, 40); // 假设1秒后获取到数据
     },
     handleScroll() {
       // 当滚动接近页面底部时，加载更多文章
@@ -83,6 +83,7 @@ export default {
   align-items: center; /* 确保子元素居中对齐 */
   gap: 20px; /* 在文章块之间添加间距 */
   padding: 10px; /* 组件的内边距 */
+  margin : 0 0 0 0;
 }
 
 /* 如果文章块的样式在 ArticleBlock.vue 中定义，这里无需重复 */

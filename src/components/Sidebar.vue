@@ -8,7 +8,7 @@
       </div>
     </router-link>
     <router-link to="/care" class="sidebar-link" active-class="active-link">
-      <img src="/icon/award.svg" class="icon" alt="关注" />
+      <img src="/icon/user-check.svg" class="icon" alt="关注" />
       <span>关注</span>
     </router-link>
     <router-link to="/categories" class="sidebar-link" active-class="active-link">
@@ -46,7 +46,8 @@ export default {
 </script>
 <style scoped>
 .sidebar {
-  background-color: rgb(82, 177, 221); 
+  z-index: 998244;
+  background-color: rgb(107, 195, 236); 
   font-family: STZHONGS;
   color: #fff;
   height: 100vh;
@@ -110,6 +111,7 @@ export default {
 .user-label {
   margin-top: 5px;
   color: #fff;
+  font-size: 20px;
 }
 
 /* 如果需要的话，可以添加媒体查询来调整响应式布局 */

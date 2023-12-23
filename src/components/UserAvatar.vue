@@ -25,8 +25,8 @@ export default {
 }
 
 .avatar {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%; /* 使图像呈圆形 */
   object-fit: cover; /* 确保图像覆盖区域且不失真 */
   border: 2px solid #f0f0f0; /* 添加边框 */

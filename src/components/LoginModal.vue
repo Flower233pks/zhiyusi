@@ -1,21 +1,24 @@
 <template>
 <div class="modal-overlay" v-show="showModal">
   <div class="login-modal">
-    <h1>Login</h1>
+    <h1>登录 Login</h1>
     <form @submit.prevent="login">
       <div class="form-group">
-        <label for="email">Email:</label>
+        <label for="email">邮箱 Email:</label>
         <input type="email" id="email" v-model="email" required>
       </div>
       <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" id="password" v-model="password" required>
+        <label for="password">密码 Password:</label>
+        <input type="password" autocomplete="off" id="password" v-model="password" required>
       </div>
       <div class="button-container">
-        <button type="submit">Login</button>
-        <button @click="closeModal">Close</button>
+        <button type="submit">登入 Login</button>
+        <button class ='close-button' @click="closeModal">关闭 Close</button>
       </div>
     </form>
+    <p class="register-link">
+      没有账号？<button @click="handleRegisterLinkClick">现在注册！</button>
+    </p>
   </div>
 </div>
 </template>
@@ -51,6 +54,10 @@ export default {
     closeModal () {
       this.showModal = false;
       this.$emit('close');
+    },
+    handleRegisterLinkClick() {
+      this.$emit('close'); // 首先关闭当前的登录浮窗
+      this.$emit('openRegister'); // 然后通知父组件打开注册浮窗
     }
   }
 };
@@ -58,13 +65,18 @@ export default {
 
 <style scoped>
 @font-face {
+  font-family: 'STZHONGS';
+  src: url('assets/fonts/STZHONGS.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
   font-family: 'Hancock';
   src: url('assets/fonts/Hancock.TTF') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 .modal-overlay {
-  font-family: Hancock;
   position: fixed;
   top: 0;
   left: 0;
@@ -76,9 +88,12 @@ export default {
   align-items: center;
   transition: all 0.3s ease-in-out;
 }
-
+.register-link{
+  padding: 3px 3px 3px 3px ;   
+}
 .login-modal {
-  font-family: 'Hancock', sans-serif;
+  font-family: Hancock;
+  font-family: STZHONGS;
   background-color: white;
   padding: 20px;
   border-radius: 10px;
@@ -120,7 +135,7 @@ input[type="email"], input[type="password"] {
 }
 
 button {
-  font-family: 'Hancock', sans-serif; /* Ensure to provide a fallback font */
+  font-family: 'STZHONGS', sans-serif; /* Ensure to provide a fallback font */
   background-image: linear-gradient(to right, #4CAF50, #5fb761); /* Gradient background */
   color: white;
   padding: 12px 20px; /* Slightly larger padding for a more prominent look */

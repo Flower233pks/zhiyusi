@@ -1,10 +1,12 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
-import CareView from '../views/CareView.vue'
+import FollowingView from '../views/FollowingView.vue'
 import SearchView from '../views/SearchView.vue'
 import CategoriesView from '../views/CategoriesView.vue'
+import Article from '../components/Article.vue'
 import UserView from '@/views/UserView.vue'
+import ArticleEdit from '../components/ArticleEdit.vue'
 
 const routes = [
   {
@@ -25,7 +27,7 @@ const routes = [
   {
     path: '/care',
     name: 'Care',
-    component: CareView
+    component: FollowingView
   },
   {
     path: '/search',
@@ -36,6 +38,22 @@ const routes = [
     path: '/categories',
     name: 'Categories',
     component: CategoriesView
+  },
+  {
+    path: '/article/:articleId',
+    name: 'Article',
+    component: Article
+  },
+  {
+    path: '/create-article',
+    name: 'CreateArticle',
+    component: ArticleEdit
+  },
+  {
+    path: '/edit-article/:id',
+    name: 'EditArticle',
+    component: ArticleEdit,
+    props: true
   }
 ]
 

@@ -19,9 +19,13 @@ export default {
   },
   computed: {
     computedColumns() {
-      // 根据窗口宽度动态计算列数
-      if (this.windowWidth > 1200) {
+      // 根据窗口宽度动态计算列数数
+      if (this.windowWidth > 1680) {
+        return 6;
+      } else if (this.windowWidth > 1380) {
         return 5;
+      } else if (this.windowWidth > 1080) {
+        return 4;
       } else if (this.windowWidth > 768) {
         return 3;
       } else {

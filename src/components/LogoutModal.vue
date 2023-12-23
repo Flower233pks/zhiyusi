@@ -1,10 +1,10 @@
 <template>
   <div class="modal-overlay" v-show="showModal">
     <div class="logout-modal">
-     <h2>Confirm Logout ? </h2>
+     <h2>要退出登录吗 </h2>
      <div class="button-container">
-       <button @click="logout">Logout</button>
-       <button @click="closeModal">Cancel</button>
+       <button @click="logout">退出</button>
+       <button class = 'cancel-button' @click="closeModal">取消</button>
      </div>
     </div>
   </div>
@@ -39,14 +39,14 @@ export default {
 
 <style scoped>
 @font-face {
-  font-family: 'Hancock';
-  src: url('assets/fonts/Hancock.TTF') format('truetype');
+  font-family: 'STZHONGS';
+  src: url('assets/fonts/STZHONGS.TTF') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 .modal-overlay {
-  font-family: Hancock;
+  font-family: STZHONGS;
   position: fixed;
   top: 0;
   left: 0;
@@ -61,7 +61,6 @@ export default {
 }
 
 .logout-modal {
-  font-family: 'Hancock', sans-serif;
   background-color: white;
   padding: 20px;
   border-radius: 10px;
@@ -83,7 +82,7 @@ export default {
 }
 
 button {
-  font-family: 'Hancock', sans-serif; /* Ensure to have a fallback font */
+  font-family: STZHONGS;
   background-image: linear-gradient(to right, #4CAF50, #67C967); /* Gradient background */
   color: white;
   padding: 8px 12px;
